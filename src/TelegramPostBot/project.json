@@ -39,7 +39,8 @@
   },
   "buildOptions": {
     "emitEntryPoint": true,
-    "preserveCompilationContext": true
+    "preserveCompilationContext": true,
+    "outputName": "dotnetmvc"
   },
   "runtimeOptions": {
     "configProperties": {
@@ -53,10 +54,11 @@
       "appsettings.json",
       "web.config"
     ]
-  },
-  "scripts": {
-    "postpublish": [
-      "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%"
-    ]
   }
+  //,
+  //"scripts": {
+  //  "postpublish": [
+  //    "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%"
+  //  ]
+  //}
 }

@@ -14,8 +14,7 @@ namespace TelegramPostBot
     {
         public static void Main(string[] args)
         {
-			//var url = $"http://*:{Environment.GetEnvironmentVariable("PORT")}/";
-			//Console.WriteLine($"Using Url: {url}");
+			
 
 			var configurations = new ConfigurationBuilder()
 						.AddCommandLine(args)
@@ -27,7 +26,8 @@ namespace TelegramPostBot
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
-                .Build();
+				.UseUrls(args[0])
+				.Build();
 
             host.Run();
         }
