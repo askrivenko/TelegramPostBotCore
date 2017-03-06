@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
+
 
 namespace TelegramPostBot
 {
@@ -12,7 +14,15 @@ namespace TelegramPostBot
     {
         public static void Main(string[] args)
         {
-            var host = new WebHostBuilder()
+			//var url = $"http://*:{Environment.GetEnvironmentVariable("PORT")}/";
+			//Console.WriteLine($"Using Url: {url}");
+
+			var configurations = new ConfigurationBuilder()
+						.AddCommandLine(args)
+						.Build();
+
+
+			var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
