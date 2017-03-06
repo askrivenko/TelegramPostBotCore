@@ -40,7 +40,7 @@
   "buildOptions": {
     "emitEntryPoint": true,
     "preserveCompilationContext": true,
-    "outputName": "dotnetmvc"
+    "outputName": "TelegramPostBot"
   },
   "runtimeOptions": {
     "configProperties": {
